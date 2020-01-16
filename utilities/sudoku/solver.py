@@ -1,4 +1,4 @@
-class Solution(object):
+class SudokuSolver(object):
     def solveSudoku(self, board):
         """
         :type board: List[List[str]]
