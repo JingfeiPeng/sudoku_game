@@ -1,1 +1,12 @@
-<p>suduku works!</p>
+<div class="container">
+    <h1>Sududo Solver Game</h1>
+    <div class="gameArea">
+        <ng-container *ngFor="let row of initialSudoku">
+            <div class="row">
+                <ng-container *ngFor="let col of row">
+                    <div class="cell">{{col}}</div>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</div>

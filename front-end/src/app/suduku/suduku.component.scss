@@ -1,0 +1,24 @@
+$sudokuBoxHeight: 50vh;
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    .gameArea{
+        height: $sudokuBoxHeight;
+        width: 50%;
+        background-color: white;
+    }
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    .cell{
+        border: 1px solid black;
+        width: 11%;
+        height: $sudokuBoxHeight/9;
+    }
+}
