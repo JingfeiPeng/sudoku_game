@@ -4,7 +4,12 @@
         <ng-container *ngFor="let row of initialSudoku">
             <div class="row">
                 <ng-container *ngFor="let col of row">
-                    <div class="cell">{{col}}</div>
+                    <div class="cell">
+                        <span *ngIf="col != '.'; else elseBlock">
+                            {{col}}
+                        </span>
+                        <ng-template #elseBlock><input class="inputCell"/></ng-template>
+                    </div>
                 </ng-container>
             </div>
         </ng-container>

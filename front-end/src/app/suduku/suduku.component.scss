@@ -21,4 +21,8 @@ $sudokuBoxHeight: 50vh;
         width: 11%;
         height: $sudokuBoxHeight/9;
     }
+    .inputCell{
+        width: 90%;
+        height: 90%;
+    }
 }
