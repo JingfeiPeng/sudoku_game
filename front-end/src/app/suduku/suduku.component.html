@@ -4,14 +4,16 @@
         <ng-container *ngFor="let row of initialSudoku">
             <div class="row">
                 <ng-container *ngFor="let col of row">
-                    <div class="cell">
-                        <span *ngIf="col != '.'; else elseBlock">
-                            {{col}}
-                        </span>
-                        <ng-template #elseBlock><input class="inputCell"/></ng-template>
+                    <div class="cell" [class.filled]="col != '.'" [class.unfilled]="col == '.'">
+                        <span *ngIf="col != '.'; else elseBlock">{{col}}</span>
+                        <ng-template #elseBlock>
+                            <div class="inputbox"><input class="inputCell"/></div>
+                        </ng-template>
                     </div>
                 </ng-container>
             </div>
         </ng-container>
     </div>
+    <button (click)="validateCurrentProgress()">Check if you are on the right track</button>
+    <button (click)="submitUserSolution()">Submit Sudoku Solution</button>
 </div>

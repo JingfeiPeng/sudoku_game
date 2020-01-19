@@ -16,11 +16,17 @@ export class SudukuComponent implements OnInit {
     ["7",".",".",".","2",".",".",".","6"],
     [".","6",".",".",".",".","2","8","."],
     [".",".",".","4","1","9",".",".","5"],
-    [".",".",".",".","8",".",".","7","9"]];
+    [".",".",".",".","8",".",".","7","9"]
+  ];
   constructor(private apiCall : ApiCallService) { }
 
   ngOnInit() {
     this.apiCall.solver(this.initialSudoku)
+    .subscribe(res => console.log(res))
+  }
+
+  validateCurrentProgress(){
+    this.apiCall.validateCurrentProgress(this.initialSudoku)
     .subscribe(res => console.log(res))
   }
 

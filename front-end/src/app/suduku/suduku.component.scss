@@ -1,4 +1,6 @@
 $sudokuBoxHeight: 50vh;
+$filled: green;
+$unfilled: black;
 
 .container{
     display: flex;
@@ -7,8 +9,9 @@ $sudokuBoxHeight: 50vh;
     align-items: center;
     height: 100vh;
     .gameArea{
-        height: $sudokuBoxHeight;
         width: 50%;
+        min-width: 400px;
+        margin-bottom: 5%;
         background-color: white;
     }
 }
@@ -17,12 +20,27 @@ $sudokuBoxHeight: 50vh;
     width: 100%;
     display: flex;
     .cell{
-        border: 1px solid black;
         width: 11%;
         height: $sudokuBoxHeight/9;
+        margin:1px;
+    }
+    .filled{
+        border: 2px solid $filled;
+        background-color: $filled;
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .unfilled{
+        border: 2px solid $unfilled;
     }
     .inputCell{
         width: 90%;
         height: 90%;
+    }
+    .inputbox{
+        width: 100%;
+        height: 100%;
+        background-color: black;
     }
 }

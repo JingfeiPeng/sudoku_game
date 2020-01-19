@@ -15,4 +15,10 @@ export class ApiCallService {
       "pazzle":suduku
     })
   }
+
+  validateCurrentProgress(suduku: string[][]): Observable<any>{
+    return this.http.post(config.baseUrl+"validate/", {
+      "pazzle": suduku
+    })
+  }
 }
