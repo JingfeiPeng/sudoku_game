@@ -30,4 +30,8 @@ export class SudukuComponent implements OnInit {
     .subscribe(res => console.log(res))
   }
 
+  submitUserSolution(){
+    
+  }
+
 }

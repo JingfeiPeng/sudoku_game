@@ -30,7 +30,6 @@ def solveSudoku(request):
 
     solver = SudokuSolver()
     solver.solveSudoku(sudoku)
-
     return HttpResponse(json.dumps(sudoku))
 
 @csrf_exempt
@@ -40,4 +39,6 @@ def validate(request):
         sudoku = body["pazzle"]
     
     validator = Validator()
-    return HttpResponse(validator.isValidSudoku(sudoku))
+    res = validator.isValidSudoku(sudoku)
+    print(res)
+    return HttpResponse(json.dumps(res))
