@@ -1,6 +1,7 @@
 $sudokuBoxHeight: 50vh;
 $filled: green;
 $unfilled: black;
+$undecided : blue;
 
 .container{
     display: flex;
@@ -30,6 +31,10 @@ $unfilled: black;
         color: white;
         font-size: 1.5rem;
         text-align: center;
+    }
+    .undecided{
+        border: 2px solid $undecided;
+        background-color: $undecided;
     }
     .unfilled{
         border: 2px solid $unfilled;

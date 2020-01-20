@@ -12,7 +12,11 @@ class Validator(object):
                     rowName = num+'row'+str(row)
                     colName = num+'col'+str(col)
                     blockName = num+'block'+str(row/3) +'and'+str(col/3)
-                    if rowName in seen or colName in seen or blockName in seen:
+                    if rowName in seen:
+                        return False
+                    elif  colName in seen:
+                        return False
+                    elif blockName in seen:
                         return False
                     else:
                         seen[rowName] = 1

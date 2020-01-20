@@ -1,19 +1,25 @@
 <div class="container">
     <h1>Sududo Solver Game</h1>
     <div class="gameArea">
-        <ng-container *ngFor="let row of initialSudoku">
+        <ng-container *ngFor="let row of workingSudoku; let i = index">
             <div class="row">
-                <ng-container *ngFor="let col of row">
-                    <div class="cell" [class.filled]="col != '.'" [class.unfilled]="col == '.'">
+                <ng-container *ngFor="let col of row; let j = index">
+                    <div class="cell" [class.filled]="col != '.'" [class.unfilled]="col == '.'" 
+                        [class.undecided]="!checked[i][j]" >
                         <span *ngIf="col != '.'; else elseBlock">{{col}}</span>
                         <ng-template #elseBlock>
-                            <div class="inputbox"><input class="inputCell"/></div>
+                            <div class="inputbox">
+                                <input type="text" class="inputCell" 
+                                (keyup.enter)="updateSudoku($event.target.value, i, j)"/>
+                            </div>
                         </ng-template>
                     </div>
                 </ng-container>
             </div>
         </ng-container>
     </div>
+    <p *ngIf="msg !=''" >{{msg}}</p>
     <button (click)="validateCurrentProgress()">Check if you are on the right track</button>
     <button (click)="submitUserSolution()">Submit Sudoku Solution</button>
 </div>
+
