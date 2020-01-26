@@ -58,6 +58,12 @@ export class SudukuComponent implements OnInit {
     
   }
 
+  resetField(row,col){
+    if (this.checked[row][col]) return;
+
+    this.workingSudoku[row][col] = '.';
+  }
+
   updateSudoku(val, row, col){
     val = parseInt(val)
     if (typeof val === 'number' && 0 <= val && val <= 9){

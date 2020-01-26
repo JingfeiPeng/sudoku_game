@@ -5,8 +5,8 @@
             <div class="row">
                 <ng-container *ngFor="let col of row; let j = index">
                     <div class="cell" [class.filled]="col != '.'" [class.unfilled]="col == '.'" 
-                        [class.undecided]="!checked[i][j]" >
-                        <span *ngIf="col != '.'; else elseBlock">{{col}}</span>
+                        [class.undecided]="!checked[i][j]" (dblclick)="resetField(i,j)" >
+                        <span *ngIf="col != '.'; else elseBlock" >{{col}}</span>
                         <ng-template #elseBlock>
                             <div class="inputbox">
                                 <input type="text" class="inputCell" 
