@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { SudukuComponent } from './suduku/suduku.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NumberMaskDirective } from './masks/number-mask.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { NumberMaskDirective } from './masks/number-mask.directive';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

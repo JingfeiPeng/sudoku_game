@@ -19,7 +19,11 @@
         </ng-container>
     </div>
     <p *ngIf="msg !=''" >{{msg}}</p>
-    <button (click)="validateCurrentProgress()">Check if you are on the right track</button>
-    <button (click)="submitUserSolution()">Submit Sudoku Solution</button>
+    <button mat-raised-button color="primary" (click)="validateCurrentProgress()">
+        Validate Current Progress
+    </button>
+    <button mat-raised-button color="accent" (click)="submitUserSolution()">
+        Submit Sudoku Solution
+    </button>
 </div>
 
