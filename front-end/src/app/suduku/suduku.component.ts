@@ -23,10 +23,10 @@ export class SudukuComponent implements OnInit {
   constructor(private apiCall : ApiCallService) { }
 
   ngOnInit() {
-    this.apiCall.solver(this.workingSudoku)
-    .subscribe(res => console.log(res))
     this.updateChecked()
   }
+
+
 
   updateChecked(){
     this.checked = []
@@ -54,8 +54,9 @@ export class SudukuComponent implements OnInit {
     })
   }
 
-  submitUserSolution(){
-    
+  showSolution(){
+    this.apiCall.solver(this.workingSudoku)
+    .subscribe(res => this.workingSudoku = res)
   }
 
   resetField(row,col){
