@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallService } from '../services/api-call.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-suduku',
@@ -20,10 +21,19 @@ export class SudukuComponent implements OnInit {
   ];
   checked: boolean[][] = [];
   msg: string = "";
-  constructor(private apiCall : ApiCallService) { }
+  constructor(private apiCall : ApiCallService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.updateChecked()
+    this.route.queryParamMap.subscribe(params =>{
+      let index = params.get('id');
+      if (!index) return;
+      this.apiCall.fetchAvaliableSudokus()
+      .subscribe(res => {
+        this.workingSudoku = res[index]
+        this.updateChecked()
+      })
+    })
   }
 
 

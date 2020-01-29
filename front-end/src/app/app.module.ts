@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SudokuSelectionComponent } from './sudoku-selection/sudoku-selection.component';
 import { AppRoutingModule } from './app-routing.module';
+import {MatListModule} from '@angular/material/list';
+import {FormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@ import { SudokuSelectionComponent } from './sudoku-selection/sudoku-selection.co
 
 const routes: Routes = [
   { path:"more_sudokus", component: SudokuSelectionComponent},
+  { path: ':id?', component: SudukuComponent },
   { path: '**', component: SudukuComponent }
 ];
 

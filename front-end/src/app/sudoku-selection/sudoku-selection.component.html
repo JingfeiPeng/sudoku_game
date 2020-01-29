@@ -1,1 +1,23 @@
-<p>sudoku-selection works!</p>
+
+<div id="container">
+    <h1>Select from the following avaliable sudokus</h1>
+    <mat-selection-list #sudokuChosen>
+        <mat-list-option  
+            *ngFor="let sudoku of sudokuList; let index = index"
+            (click)="changeSelection(index)"
+        >
+            <div>
+                <table>
+                    <tr *ngFor="let row of sudoku">
+                        <td *ngFor="let col of row">{{col}}</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </mat-list-option>
+    </mat-selection-list>
+    <button mat-raised-button color="primary" (click)="selectThisSudoku()">
+        Select and Play
+    </button>
+</div>
+

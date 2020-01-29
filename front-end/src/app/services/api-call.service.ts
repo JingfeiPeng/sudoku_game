@@ -21,4 +21,8 @@ export class ApiCallService {
       "pazzle": suduku
     })
   }
+
+  fetchAvaliableSudokus(): Observable<any>{
+    return this.http.get(config.baseUrl+"fetchAllSudokus/")
+  }
 }
